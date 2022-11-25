@@ -22,9 +22,6 @@ public class Cliente {
         }
     }
 
-
-
-
     private void conectar() throws SocketException, UnknownHostException {
         this.Socket = new DatagramSocket();
         this.Dirección = InetAddress.getByName("localhost");
