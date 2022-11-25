@@ -16,6 +16,7 @@ public class Cliente {
             generarMensaje();
             enviarMensaje();
         } catch (Exception e) {
+            System.err.println(e.getClass());
             System.err.println(e.getMessage());
         } finally {
             if (!continuar()) ejecutar();
@@ -32,7 +33,6 @@ public class Cliente {
         // Se ingresa el texto, luego, se pasa a bytes.
         this.Mensaje = Utilidades.validarString();
         this.MensajeBytes = this.Mensaje.getBytes();
-
     }
 
     private void enviarMensaje() throws IOException {
@@ -41,7 +41,6 @@ public class Cliente {
                 this.Dirección,
                 3333);
         this.Socket.send(this.Paquete);
-
     }
 
     private boolean continuar() {
